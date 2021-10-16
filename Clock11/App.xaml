@@ -1,7 +1,7 @@
-﻿<Application x:Class="Windows11Clock.App"
+﻿<Application x:Class="Clock11.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Windows11Clock"
+             xmlns:local="clr-namespace:Clock11"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

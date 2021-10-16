@@ -1,9 +1,9 @@
-﻿<Window x:Class="Windows11Clock.MainWindow"
+﻿<Window x:Class="Clock11.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Windows11Clock"
+        xmlns:local="clr-namespace:Clock11"
         IsHitTestVisible="False"
         mc:Ignorable="d" AllowsTransparency="True" Background="Transparent"  WindowStyle="None" ResizeMode="NoResize"
         Title="ClockController" Width="0" Height="0" Foreground="White" ShowInTaskbar="False">

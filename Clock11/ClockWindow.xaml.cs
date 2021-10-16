@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace Windows11Clock
+namespace Clock11
 {
     /// <summary>
     /// Interaction logic for ClockWindow.xaml

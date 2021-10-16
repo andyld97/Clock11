@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Threading;
 
-namespace Windows11Clock
+namespace Clock11
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows11Clock", "Windows11Clock\Windows11Clock.csproj", "{81CA9D10-7A50-4E0D-97BE-3B8383C44CCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clock11", "Clock11\Clock11.csproj", "{81CA9D10-7A50-4E0D-97BE-3B8383C44CCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

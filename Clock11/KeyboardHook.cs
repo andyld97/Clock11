@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows.Input;
 
-namespace Windows11Clock
+namespace Clock11
 {
     /// <summary>
     /// Taken from https://stackoverflow.com/a/65412682/6237448
