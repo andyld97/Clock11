@@ -18,4 +18,4 @@ Since this is a WPF Application which spawns transparent and TopMost=true window
 disappears in the background, especially if you are using the additional taskbars. I've tried to bring the windows back to the front, but it doesn't really work without interrupting the user. I think it is related to the fact that the taskbars are on top of all windows.
 
 ## Hotkeys
-`Ctrl + U` - Brings all clocks back to the front 
+`Ctrl + U` - Bring all clocks back to the front 
