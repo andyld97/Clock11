@@ -108,6 +108,7 @@ namespace Clock11
         protected override void OnClosing(CancelEventArgs e)
         {
             base.OnClosing(e);
+            isInitalized = false;
             OnClosingSettingsDialog?.Invoke(this, EventArgs.Empty);
         }
 
