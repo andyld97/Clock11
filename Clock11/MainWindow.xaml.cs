@@ -29,8 +29,9 @@ namespace Clock11
             clockTimer.Tick += ClockTimer_Tick;
             clockTimer.Start();
 
-            // Register hotkey
-            GlobalHotKey.RegisterHotKey("Ctrl + U", () => clockWindows.ForEach(w => w.BringToFront()));
+            // Register hotkeys
+            GlobalHotKey.RegisterHotKey("Ctrl + U", () => ClockWindow.BringClockWindowsToFront(clockWindows));
+            GlobalHotKey.RegisterHotKey("Ctrl + H", () => clockWindows.ForEach(w => w.Hide()));
 
             // Initalize notify icon
             System.Windows.Forms.NotifyIcon notifyIcon = new System.Windows.Forms.NotifyIcon
@@ -83,11 +84,8 @@ namespace Clock11
         public void RefreshTheme()
         {
             var theme = Theme.GetCurrentTheme();
-            clockWindows.ForEach(w =>
-            {
-                w.ApplyTheme(theme);
-                w.BringToFront();
-            });
+            clockWindows.ForEach(w => w.ApplyTheme(theme));
+            ClockWindow.BringClockWindowsToFront(clockWindows);
         }
 
         private void ClockTimer_Tick(object? sender, EventArgs e)

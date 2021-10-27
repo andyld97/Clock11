@@ -1,5 +1,7 @@
 ﻿using Clock11.Data;
 using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Media;
 
@@ -12,6 +14,12 @@ namespace Clock11
     {
         private double defaultLeft;
         private double defaultTop;
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetForegroundWindow();
+
+        [DllImportAttribute("user32.dll")]
+        private static extern int SetForegroundWindow(int hWnd);
 
         public ClockWindow()
         {
@@ -35,10 +43,13 @@ namespace Clock11
         }
 
         public void BringToFront()
-        {
+        {       
+            // Activate the clock
+            Show();
+            Activate();
             Topmost = false;
             Topmost = true;
-            Activate();
+            Activate();        
         }
 
         public void ApplyTheme(Theme theme)
@@ -79,6 +90,18 @@ namespace Clock11
             }
 
             TextClockDate.Margin = new Thickness(0, theme.DateMargin, 0, 0);
+        }
+
+        public static void BringClockWindowsToFront(List<ClockWindow> windows)
+        {
+            // Get the foreground window
+            var oldWindowHandle = GetForegroundWindow();
+
+            // Bring all windows to the front
+            windows.ForEach(w => w.BringToFront());
+
+            // Restore old forgeground window (otherwise you will loose the focus of your current foreground window!)
+            SetForegroundWindow(oldWindowHandle.ToInt32());
         }
     }
 }
