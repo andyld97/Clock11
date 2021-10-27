@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Clock11"
-#define MyAppVersion "1.0.0.0"
+#define MyAppVersion "1.1.0"
 #define MyAppPublisher "Code A Software"
 #define MyAppExeName "Clock11.exe"
 
@@ -22,6 +22,7 @@ DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 PrivilegesRequired=lowest
 OutputDir=F:\Eigene Dateien\Desktop
+SetupIconFile=icon\clock.ico
 OutputBaseFilename=Clock11
 Compression=lzma
 SolidCompression=yes
@@ -31,14 +32,12 @@ WizardStyle=modern
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
-Source: "C:\Users\andre\source\repos\andyld97\Clock11\Clock11\bin\Debug\net5.0-windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\andre\source\repos\andyld97\Clock11\Clock11\bin\Debug\net5.0-windows\Clock11.deps.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\andre\source\repos\andyld97\Clock11\Clock11\bin\Debug\net5.0-windows\Clock11.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\andre\source\repos\andyld97\Clock11\Clock11\bin\Debug\net5.0-windows\Clock11.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\andre\source\repos\andyld97\Clock11\Clock11\bin\Debug\net5.0-windows\Clock11.pdb"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\andre\source\repos\andyld97\Clock11\Clock11\bin\Debug\net5.0-windows\Clock11.runtimeconfig.dev.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\andre\source\repos\andyld97\Clock11\Clock11\bin\Debug\net5.0-windows\Clock11.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\andre\source\repos\andyld97\Clock11\Clock11\bin\Debug\net5.0-windows\ref\*"; DestDir: "{app}\ref"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\bin\Release\net5.0-windows\publish\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\net5.0-windows\publish\Clock11.deps.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\net5.0-windows\publish\Clock11.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\net5.0-windows\publish\Clock11.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\net5.0-windows\publish\Clock11.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\net5.0-windows\publish\Serialization.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
