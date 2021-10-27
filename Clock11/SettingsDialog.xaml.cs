@@ -34,16 +34,18 @@ namespace Clock11
             {
                 // Predefined theme
                 RadioPredefinedTheme.IsChecked = true;
-                CmbThemes.SelectedIndex = (Settings.Instance.Theme == "Windows11" ? 0 : 1);
+                CmbThemes.SelectedIndex = (Settings.Instance.Theme == Consts.Windows11Theme ? 0 : 1);
             }
 
-            isInitalized = true;
-        }
+            // Apply custom theme settings anyway
+            NumFontSize.Value = (int)Settings.Instance.CustomTheme.FontSize;
+            CmbFontFamily.Select(new System.Windows.Media.FontFamily(Settings.Instance.CustomTheme.FontFamily));
+            CmbColorPicker.SelectedColor = Settings.Instance.CustomTheme.ForegroundColor;
+            NumRightMargin.Value = Settings.Instance.CustomTheme.RightMargin;
+            NumTopMargin.Value = Settings.Instance.CustomTheme.TopMargin;
+            NumDateTimeMargin.Value = Settings.Instance.CustomTheme.DateMargin;
 
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-            OnClosingSettingsDialog?.Invoke(this, EventArgs.Empty);
+            isInitalized = true;
         }
 
         private void UpdateTheme()
@@ -56,9 +58,22 @@ namespace Clock11
                 var item = CmbThemes.SelectedItem as ComboBoxItem;
                 Settings.Instance.Theme = item.Tag.ToString();
             }
+            else
+            {
+                Settings.Instance.CustomTheme.FontSize = NumFontSize.Value;
+                Settings.Instance.CustomTheme.FontFamily = CmbFontFamily.SelectedFontFamily.ToString();
+                Settings.Instance.CustomTheme.ForegroundColor = CmbColorPicker.SelectedColor;
+                Settings.Instance.CustomTheme.RightMargin = NumRightMargin.Value;
+                Settings.Instance.CustomTheme.TopMargin = NumTopMargin.Value;
+                Settings.Instance.CustomTheme.DateMargin = NumDateTimeMargin.Value;
+
+                Settings.Instance.Theme = string.Empty;
+            }
 
             owner.RefreshTheme();
+            Activate();
         }
+
 
         private void RadioPredefinedTheme_Checked(object sender, RoutedEventArgs e)
         {
@@ -73,12 +88,27 @@ namespace Clock11
         private void CmbThemes_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             UpdateTheme();
+        }    
+
+        private void NumFontSize_OnChanged(int oldValue, int newValue)
+        {
+            UpdateTheme();
         }
 
-        private void ButtonApply_Click(object sender, RoutedEventArgs e)
+        private void CmbFontFamily_OnFontChanged(System.Windows.Media.FontFamily family)
         {
-            Settings.Instance.Save();
-            DialogResult = true;
+            UpdateTheme();
+        }
+
+        private void CmbColorPicker_ColorChanged(System.Windows.Media.Color c)
+        {
+            UpdateTheme();
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            OnClosingSettingsDialog?.Invoke(this, EventArgs.Empty);
         }
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
@@ -86,6 +116,12 @@ namespace Clock11
             Settings.Instance = oldSettings;
             owner.RefreshTheme();
             DialogResult = false;
+        }
+
+        private void ButtonApply_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Instance.Save();
+            DialogResult = true;
         }
     }
 }

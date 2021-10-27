@@ -39,9 +39,9 @@ namespace Clock11.Data
             if (string.IsNullOrEmpty(Settings.Instance.Theme))
                 return Settings.Instance.CustomTheme;
 
-            if (Settings.Instance.Theme == "Windows11")
+            if (Settings.Instance.Theme == Consts.Windows11Theme)
                 return Themes.Windows11Theme;
-            else if (Settings.Instance.Theme == "Windows10")
+            else if (Settings.Instance.Theme == Consts.Windows10Theme)
                 return Themes.Windows10Theme;
 
             return Themes.Windows11Theme; // fallback/default

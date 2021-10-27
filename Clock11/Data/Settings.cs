@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Media;
 
 namespace Clock11.Data
 {
@@ -10,7 +11,13 @@ namespace Clock11.Data
 
         public string Theme { get; set; } = "Windows11";
 
-        public Theme CustomTheme { get; set; } = new Theme();
+        public Theme CustomTheme { get; set; } = new Theme()
+        {
+            FontFamily = "Segoe",
+            ForegroundColor = Colors.White,
+            FontSize = 11,
+            HorizontalAlignment = Data.Theme.HAlignment.Right
+        };
 
         public static Settings Load()
         {
