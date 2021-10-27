@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using static Clock11.Data.Theme;
 
 namespace Clock11
 {
@@ -44,6 +45,7 @@ namespace Clock11
             NumRightMargin.Value = Settings.Instance.CustomTheme.RightMargin;
             NumTopMargin.Value = Settings.Instance.CustomTheme.TopMargin;
             NumDateTimeMargin.Value = Settings.Instance.CustomTheme.DateMargin;
+            CmbAlignment.SelectedIndex = (int)Settings.Instance.CustomTheme.HorizontalAlignment;
 
             isInitalized = true;
         }
@@ -66,6 +68,7 @@ namespace Clock11
                 Settings.Instance.CustomTheme.RightMargin = NumRightMargin.Value;
                 Settings.Instance.CustomTheme.TopMargin = NumTopMargin.Value;
                 Settings.Instance.CustomTheme.DateMargin = NumDateTimeMargin.Value;
+                Settings.Instance.CustomTheme.HorizontalAlignment = (HAlignment)CmbAlignment.SelectedIndex;
 
                 Settings.Instance.Theme = string.Empty;
             }

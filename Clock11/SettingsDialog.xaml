@@ -51,6 +51,15 @@
 
                 <TextBlock Text="Margin Date/Time:" />
                 <controls:NumericUpDown x:Name="NumDateTimeMargin" OnChanged="NumFontSize_OnChanged" Value="0" Height="25" Width="180" Minimum="0" Maximum="10" Step="1" HorizontalAlignment="Left" />
+
+                <TextBlock Text="Text-Alignment:" />
+                <ComboBox x:Name="CmbAlignment" SelectedIndex="0" SelectionChanged="CmbThemes_SelectionChanged">
+                    <ComboBox.Items>
+                        <ComboBoxItem>Left</ComboBoxItem>
+                        <ComboBoxItem>Center</ComboBoxItem>
+                        <ComboBoxItem>Right</ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
             </StackPanel>
         </GroupBox>
 
