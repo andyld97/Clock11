@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="clr-namespace:Clock11.Controls"
         mc:Ignorable="d"
+        xmlns:res="clr-namespace:Clock11"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         SizeToContent="Height"
-        Title="Clock11 Settings" Width="400" FontFamily="Segoe UI">    
+        Title="{x:Static res:Resources.strSettings_Title}" Width="400" FontFamily="Segoe UI">
     <StackPanel>
         <StackPanel.Resources>
             <Style TargetType="{x:Type TextBlock}">
@@ -17,55 +18,54 @@
         </StackPanel.Resources>
         <GroupBox Margin="0,5,0,0">
             <GroupBox.Header>
-                <RadioButton x:Name="RadioPredefinedTheme" Checked="RadioPredefinedTheme_Checked" Unchecked="RadioPredefinedTheme_Checked" GroupName="grp1" Content="Predefined Theme" IsChecked="True" />
+                <RadioButton x:Name="RadioPredefinedTheme" Checked="RadioPredefinedTheme_Checked" Unchecked="RadioPredefinedTheme_Checked" GroupName="grp1" Content="{x:Static res:Resources.strSettings_PredefiniedThemes}" IsChecked="True" />
             </GroupBox.Header>
             <StackPanel IsEnabled="{Binding ElementName=RadioPredefinedTheme,Path=IsChecked}">
-                <TextBlock Text="Theme:" />
-                <ComboBox x:Name="CmbThemes" SelectionChanged="CmbThemes_SelectionChanged" SelectedIndex="0"> 
-                    <ComboBoxItem FontWeight="Bold" Tag="Windows11">Windows 11 (Default)</ComboBoxItem>
-                    <ComboBoxItem Tag="Windows10">Windows 10</ComboBoxItem>
+                <TextBlock Text="{x:Static res:Resources.strSettings_Theme}" />
+                <ComboBox x:Name="CmbThemes" SelectionChanged="CmbThemes_SelectionChanged" SelectedIndex="0">
+                    <ComboBoxItem FontWeight="Bold" Tag="Windows11" Content="{x:Static res:Resources.strTheme_Windows11}" />
+                    <ComboBoxItem Tag="Windows10" Content="{x:Static res:Resources.strTheme_Windows10}"/>
                 </ComboBox>
             </StackPanel>
         </GroupBox>
 
         <GroupBox Margin="0,10,0,0">
             <GroupBox.Header>
-                <RadioButton x:Name="RadioCustomTheme" Checked="RadioCustomTheme_Checked" Unchecked="RadioCustomTheme_Checked" GroupName="grp1" Content="Custom Theme" />
+                <RadioButton x:Name="RadioCustomTheme" Checked="RadioCustomTheme_Checked" Unchecked="RadioCustomTheme_Checked" GroupName="grp1" Content="{x:Static res:Resources.strSettingsDialog_CustomTheme}" />
             </GroupBox.Header>
-            <StackPanel  IsEnabled="{Binding ElementName=RadioCustomTheme,Path=IsChecked}">
+            <StackPanel IsEnabled="{Binding ElementName=RadioCustomTheme,Path=IsChecked}">
+                <TextBlock Text="{x:Static res:Resources.strSettingsDialog_FontFamily}" />
+                <controls:FontChooseBox x:Name="CmbFontFamily" Margin="5,0,0,0" Height="25" OnFontChanged="CmbFontFamily_OnFontChanged" />
 
-                <TextBlock Text="Font Family:" />
-                <controls:FontChooseBox x:Name="CmbFontFamily" Height="25" OnFontChanged="CmbFontFamily_OnFontChanged" />
+                <TextBlock Text="{x:Static res:Resources.strSettingsDialog_FontColor}" />
+                <controls:ColorPicker x:Name="CmbColorPicker" Margin="5,0,0,0" ColorChanged="CmbColorPicker_ColorChanged" Height="30" HorizontalAlignment="Left" />
 
-                <TextBlock Text="Font Color:" />
-                <controls:ColorPicker x:Name="CmbColorPicker" ColorChanged="CmbColorPicker_ColorChanged" Height="30" HorizontalAlignment="Left" />
-
-                <TextBlock Text="Font Size:" />
+                <TextBlock Text="{x:Static res:Resources.strSettingsDialog_FontSize}" />
                 <controls:NumericUpDown x:Name="NumFontSize" OnChanged="NumFontSize_OnChanged" Value="11" Height="25" Width="180" Minimum="8" Maximum="20" Step="1" HorizontalAlignment="Left" />
 
-                <TextBlock Text="Right Margin:" />
+                <TextBlock Text="{x:Static res:Resources.strSettingsDialog_RightMargin}" />
                 <controls:NumericUpDown x:Name="NumRightMargin" OnChanged="NumFontSize_OnChanged" Value="0" Height="25" Width="180" Minimum="-100" Maximum="100" Step="1" HorizontalAlignment="Left" />
-                
-                <TextBlock Text="Top Margin:" />
+
+                <TextBlock Text="{x:Static res:Resources.strSettingsDialog_TopMargin}" />
                 <controls:NumericUpDown x:Name="NumTopMargin" OnChanged="NumFontSize_OnChanged" Value="0" Height="25" Width="180" Minimum="-100" Maximum="100" Step="1" HorizontalAlignment="Left" />
 
-                <TextBlock Text="Margin Date/Time:" />
+                <TextBlock Text="{x:Static res:Resources.strSettingsDialog_MarginDateTime}" />
                 <controls:NumericUpDown x:Name="NumDateTimeMargin" OnChanged="NumFontSize_OnChanged" Value="0" Height="25" Width="180" Minimum="0" Maximum="10" Step="1" HorizontalAlignment="Left" />
 
-                <TextBlock Text="Text-Alignment:" />
-                <ComboBox x:Name="CmbAlignment" SelectedIndex="0" SelectionChanged="CmbThemes_SelectionChanged">
+                <TextBlock Text="{x:Static res:Resources.strSettingsDialog_TextAlignment}" />
+                <ComboBox x:Name="CmbAlignment" SelectedIndex="0" Margin="5,0,0,0" SelectionChanged="CmbThemes_SelectionChanged">
                     <ComboBox.Items>
-                        <ComboBoxItem>Left</ComboBoxItem>
-                        <ComboBoxItem>Center</ComboBoxItem>
-                        <ComboBoxItem>Right</ComboBoxItem>
+                        <ComboBoxItem Content="{x:Static res:Resources.strLeft}" />
+                        <ComboBoxItem Content="{x:Static res:Resources.strCenter}" />
+                        <ComboBoxItem Content="{x:Static res:Resources.strRight}" />
                     </ComboBox.Items>
                 </ComboBox>
             </StackPanel>
         </GroupBox>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
-            <Button x:Name="ButtonApply" Click="ButtonApply_Click" Content="Apply" FontWeight="Bold" Padding="5" Width="100"/>
-            <Button x:Name="ButtonCancel" Click="ButtonCancel_Click" Content="Cancel" Padding="5" Margin="10,0,0,0" Width="100" />
-        </StackPanel>        
+            <Button x:Name="ButtonApply" Click="ButtonApply_Click" Content="{x:Static res:Resources.strApply}" FontWeight="Bold" Padding="5" Width="100"/>
+            <Button x:Name="ButtonCancel" Click="ButtonCancel_Click" Content="{x:Static res:Resources.strCancel}" Padding="5" Margin="10,0,0,0" Width="100" />
+        </StackPanel>
     </StackPanel>
 </Window>

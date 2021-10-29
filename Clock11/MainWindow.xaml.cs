@@ -33,19 +33,39 @@ namespace Clock11
             GlobalHotKey.RegisterHotKey("Ctrl + U", () => ClockWindow.BringClockWindowsToFront(clockWindows));
             GlobalHotKey.RegisterHotKey("Ctrl + H", () => clockWindows.ForEach(w => w.Hide()));
 
+            // Create a context menu for the notifyicon
+            var menu = new System.Windows.Forms.ContextMenuStrip();
+
+            var closeButton = new System.Windows.Forms.ToolStripMenuItem() { Text = Clock11.Resources.strExit };
+            closeButton.Click += CloseButton_Click;
+
+            var settingsButton = new System.Windows.Forms.ToolStripMenuItem() { Text = Clock11.Resources.strSettings };
+            settingsButton.Click += SettingsButton_Click;
+
+            var aboutButton = new System.Windows.Forms.ToolStripMenuItem() { Text = Clock11.Resources.strAbout};
+            aboutButton.Click += AboutButton_Click;
+
+            menu.Items.AddRange(new System.Windows.Forms.ToolStripMenuItem[] { aboutButton, settingsButton, closeButton });
+
             // Initalize notify icon
             System.Windows.Forms.NotifyIcon notifyIcon = new System.Windows.Forms.NotifyIcon
             {
                 Icon = Clock11.Resources.clock,
                 Visible = true,
-                BalloonTipTitle = "Clock11",
-                Text = "Clock11"
+                BalloonTipTitle = Clock11.Resources.strAppTitle,
+                Text = Clock11.Resources.strAppTitle,
+                ContextMenuStrip = menu,
             };
-
-            notifyIcon.Click += NotifyIcon_Click;
         }
 
-        private void NotifyIcon_Click(object? sender, EventArgs e)
+        #region Tray Icon Buttons
+
+        private void AboutButton_Click(object? sender, EventArgs e)
+        {
+ 
+        }
+
+        private void SettingsButton_Click(object? sender, EventArgs e)
         {
             if (settingsDialog == null)
             {
@@ -59,6 +79,13 @@ namespace Clock11
                 settingsDialog.Show();
             }
         }
+
+        private void CloseButton_Click(object? sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        #endregion
 
         private void InitalizeClockWindows()
         {

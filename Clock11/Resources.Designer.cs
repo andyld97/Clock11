@@ -69,5 +69,239 @@ namespace Clock11 {
                 return ((System.Drawing.Icon)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string strAbout {
+            get {
+                return ResourceManager.GetString("strAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Apply.
+        /// </summary>
+        public static string strApply {
+            get {
+                return ResourceManager.GetString("strApply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clock11.
+        /// </summary>
+        public static string strAppTitle {
+            get {
+                return ResourceManager.GetString("strAppTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string strCancel {
+            get {
+                return ResourceManager.GetString("strCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Center.
+        /// </summary>
+        public static string strCenter {
+            get {
+                return ResourceManager.GetString("strCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colors:.
+        /// </summary>
+        public static string strColorPalette_Colors {
+            get {
+                return ResourceManager.GetString("strColorPalette_Colors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default Colors:.
+        /// </summary>
+        public static string strColorPalette_DefaultColors {
+            get {
+                return ResourceManager.GetString("strColorPalette_DefaultColors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        public static string strExit {
+            get {
+                return ResourceManager.GetString("strExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left.
+        /// </summary>
+        public static string strLeft {
+            get {
+                return ResourceManager.GetString("strLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right.
+        /// </summary>
+        public static string strRight {
+            get {
+                return ResourceManager.GetString("strRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string strSettings {
+            get {
+                return ResourceManager.GetString("strSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Predefined Themes.
+        /// </summary>
+        public static string strSettings_PredefiniedThemes {
+            get {
+                return ResourceManager.GetString("strSettings_PredefiniedThemes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Theme:.
+        /// </summary>
+        public static string strSettings_Theme {
+            get {
+                return ResourceManager.GetString("strSettings_Theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clock11 Settings.
+        /// </summary>
+        public static string strSettings_Title {
+            get {
+                return ResourceManager.GetString("strSettings_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom Theme.
+        /// </summary>
+        public static string strSettingsDialog_CustomTheme {
+            get {
+                return ResourceManager.GetString("strSettingsDialog_CustomTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font Color:.
+        /// </summary>
+        public static string strSettingsDialog_FontColor {
+            get {
+                return ResourceManager.GetString("strSettingsDialog_FontColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font Family:.
+        /// </summary>
+        public static string strSettingsDialog_FontFamily {
+            get {
+                return ResourceManager.GetString("strSettingsDialog_FontFamily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font Size:.
+        /// </summary>
+        public static string strSettingsDialog_FontSize {
+            get {
+                return ResourceManager.GetString("strSettingsDialog_FontSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Margin Date/Time:.
+        /// </summary>
+        public static string strSettingsDialog_MarginDateTime {
+            get {
+                return ResourceManager.GetString("strSettingsDialog_MarginDateTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right Margin:.
+        /// </summary>
+        public static string strSettingsDialog_RightMargin {
+            get {
+                return ResourceManager.GetString("strSettingsDialog_RightMargin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text-Alignment:.
+        /// </summary>
+        public static string strSettingsDialog_TextAlignment {
+            get {
+                return ResourceManager.GetString("strSettingsDialog_TextAlignment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top Margin:.
+        /// </summary>
+        public static string strSettingsDialog_TopMargin {
+            get {
+                return ResourceManager.GetString("strSettingsDialog_TopMargin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clock11 is already running!.
+        /// </summary>
+        public static string strSingleInstance_Message_AlreadyRunning {
+            get {
+                return ResourceManager.GetString("strSingleInstance_Message_AlreadyRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Already running!.
+        /// </summary>
+        public static string strSingleInstance_Message_AlreadyRunning_Title {
+            get {
+                return ResourceManager.GetString("strSingleInstance_Message_AlreadyRunning_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows 10.
+        /// </summary>
+        public static string strTheme_Windows10 {
+            get {
+                return ResourceManager.GetString("strTheme_Windows10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows 11 (Default).
+        /// </summary>
+        public static string strTheme_Windows11 {
+            get {
+                return ResourceManager.GetString("strTheme_Windows11", resourceCulture);
+            }
+        }
     }
 }

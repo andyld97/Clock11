@@ -121,4 +121,82 @@
   <data name="clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>assets\icon\clock.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="strSingleInstance_Message_AlreadyRunning" xml:space="preserve">
+    <value>Clock11 is already running!</value>
+  </data>
+  <data name="strSingleInstance_Message_AlreadyRunning_Title" xml:space="preserve">
+    <value>Already running!</value>
+  </data>
+  <data name="strAppTitle" xml:space="preserve">
+    <value>Clock11</value>
+  </data>
+  <data name="strExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="strSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="strAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="strSettings_PredefiniedThemes" xml:space="preserve">
+    <value>Predefined Themes</value>
+  </data>
+  <data name="strSettings_Theme" xml:space="preserve">
+    <value>Theme:</value>
+  </data>
+  <data name="strApply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="strCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="strSettings_Title" xml:space="preserve">
+    <value>Clock11 Settings</value>
+  </data>
+  <data name="strColorPalette_DefaultColors" xml:space="preserve">
+    <value>Default Colors:</value>
+  </data>
+  <data name="strColorPalette_Colors" xml:space="preserve">
+    <value>Colors:</value>
+  </data>
+  <data name="strSettingsDialog_CustomTheme" xml:space="preserve">
+    <value>Custom Theme</value>
+  </data>
+  <data name="strSettingsDialog_FontFamily" xml:space="preserve">
+    <value>Font Family:</value>
+  </data>
+  <data name="strSettingsDialog_FontColor" xml:space="preserve">
+    <value>Font Color:</value>
+  </data>
+  <data name="strSettingsDialog_FontSize" xml:space="preserve">
+    <value>Font Size:</value>
+  </data>
+  <data name="strSettingsDialog_RightMargin" xml:space="preserve">
+    <value>Right Margin:</value>
+  </data>
+  <data name="strSettingsDialog_TopMargin" xml:space="preserve">
+    <value>Top Margin:</value>
+  </data>
+  <data name="strSettingsDialog_MarginDateTime" xml:space="preserve">
+    <value>Margin Date/Time:</value>
+  </data>
+  <data name="strLeft" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="strCenter" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="strRight" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="strSettingsDialog_TextAlignment" xml:space="preserve">
+    <value>Text-Alignment:</value>
+  </data>
+  <data name="strTheme_Windows11" xml:space="preserve">
+    <value>Windows 11 (Default)</value>
+  </data>
+  <data name="strTheme_Windows10" xml:space="preserve">
+    <value>Windows 10</value>
+  </data>
 </root>

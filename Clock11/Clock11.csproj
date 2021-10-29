@@ -8,6 +8,7 @@
 	<UseWindowsForms>true</UseWindowsForms>
 	<ApplicationManifest>app.manifest</ApplicationManifest>
 	<ApplicationIcon>Assets\icon\clock.ico</ApplicationIcon>
+	<StartupObject>Clock11.SingleInstanceManager</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,6 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Resources.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Clock11
+﻿namespace Clock11
 {
     public class Consts
     {
         public static readonly string Windows10Theme = "Windows10";
         public static readonly string Windows11Theme = "Windows11";
+
+        public static readonly string AppMutexGuid = "ea1f467d-fe40-45f8-9a4e-19260bcdf245";
     }
 }
