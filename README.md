@@ -6,12 +6,10 @@ Clock11 is a very small app which brings back the clock on all other taskbars ex
 In Windows 11 the taskbar was functionally reduced, so the clock is only on the primary taskbar. But if you have
 multiple screens and e.g. you're playing a game in fullscreen, then you have no clock to look on. 
 
+<a href='https://www.microsoft.com/en-us/p/clock11/9mvg23f3kc11#activetab=pivot:overviewtab'><img src='https://developer.microsoft.com/store/badges/images/English_get-it-from-MS.png' alt='English badge' width="150" /></a>
+
 ## Why Clock11?
 ![feedback.png](https://github.com/andyld97/Clock11/blob/main/Clock11/Assets/feedback.png)
-
-## How To Install
-Just look at the "Release" page, there you can download the setup-file which you can install.
-The setup automatically puts Clock11 into the startup folder (shell:startup)!
 
 ## Problems
 
