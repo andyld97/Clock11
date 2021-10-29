@@ -15,6 +15,7 @@ namespace Clock11
         private readonly DispatcherTimer clockTimer = new DispatcherTimer();
         private readonly List<ClockWindow> clockWindows = new List<ClockWindow>();
         private SettingsDialog settingsDialog = null;
+        private AboutDialog aboutDialog = null;
 
         private const int LEFT_MARGIN = 60;
         private const int TOP_MARGIN = 10;
@@ -63,7 +64,17 @@ namespace Clock11
 
         private void AboutButton_Click(object? sender, EventArgs e)
         {
- 
+            if (aboutDialog == null)
+            {
+                aboutDialog = new AboutDialog(this);
+                aboutDialog.OnClosingSettingsDialog += delegate (object? sender, EventArgs e) { settingsDialog = null; };
+                aboutDialog.ShowDialog();
+            }
+            else
+            {
+                aboutDialog.Activate();
+                aboutDialog.Show();
+            }
         }
 
         private void SettingsButton_Click(object? sender, EventArgs e)

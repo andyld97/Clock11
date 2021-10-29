@@ -175,4 +175,11 @@
   <data name="strTheme_Windows11" xml:space="preserve">
     <value>Windows 11 (Standard)</value>
   </data>
+  <data name="strAboutText1" xml:space="preserve">
+    <value>Idee von Andreas L.
+Programmiert von Andreas L.</value>
+  </data>
+  <data name="strReleaseDate" xml:space="preserve">
+    <value>29.10.2021 14:23 Uhr</value>
+  </data>
 </root>

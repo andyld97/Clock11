@@ -80,6 +80,16 @@ namespace Clock11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Idea by Andreas L.
+        ///Programmed by Andreas L..
+        /// </summary>
+        public static string strAboutText1 {
+            get {
+                return ResourceManager.GetString("strAboutText1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
         public static string strApply {
@@ -148,6 +158,15 @@ namespace Clock11 {
         public static string strLeft {
             get {
                 return ResourceManager.GetString("strLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 10/29/2021 2:23 PM.
+        /// </summary>
+        public static string strReleaseDate {
+            get {
+                return ResourceManager.GetString("strReleaseDate", resourceCulture);
             }
         }
         

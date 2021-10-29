@@ -9,7 +9,13 @@
 	<ApplicationManifest>app.manifest</ApplicationManifest>
 	<ApplicationIcon>Assets\icon\clock.ico</ApplicationIcon>
 	<StartupObject>Clock11.SingleInstanceManager</StartupObject>
+	<AssemblyVersion>1.2.0</AssemblyVersion>
+	<FileVersion>1.2.0</FileVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="resources\logo.png" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\icon\clock.ico" />
@@ -19,6 +25,10 @@
     <Reference Include="Serialization">
       <HintPath>..\External Libraries\Serialization.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="resources\logo.png" />
   </ItemGroup>
 
   <ItemGroup>

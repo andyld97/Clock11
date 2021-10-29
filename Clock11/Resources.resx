@@ -199,4 +199,11 @@
   <data name="strTheme_Windows10" xml:space="preserve">
     <value>Windows 10</value>
   </data>
+  <data name="strAboutText1" xml:space="preserve">
+    <value>Idea by Andreas L.
+Programmed by Andreas L.</value>
+  </data>
+  <data name="strReleaseDate" xml:space="preserve">
+    <value>10/29/2021 2:23 PM</value>
+  </data>
 </root>

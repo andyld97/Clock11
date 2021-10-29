@@ -13,7 +13,7 @@ namespace Clock11.Dialogs
     public partial class SettingsDialog : Window
     {
         public EventHandler OnClosingSettingsDialog;
-        private MainWindow owner;
+        private readonly MainWindow owner;
         private Settings oldSettings;
         private bool isInitalized = false;
 
