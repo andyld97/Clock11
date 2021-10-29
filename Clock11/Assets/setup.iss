@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Clock11"
-#define MyAppVersion "1.1.0"
+#define MyAppVersion "1.2.0"
 #define MyAppPublisher "Code A Software"
 #define MyAppExeName "Clock11.exe"
 
@@ -17,7 +17,7 @@ AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
-DefaultDirName={commonpf}\{#MyAppName}
+DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 PrivilegesRequired=lowest
@@ -32,6 +32,7 @@ WizardStyle=modern
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
+Source: "..\bin\Release\net5.0-windows\publish\de\Clock11.resources.dll"; DestDir: "{app}\de"; Flags: ignoreversion
 Source: "..\bin\Release\net5.0-windows\publish\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\bin\Release\net5.0-windows\publish\Clock11.deps.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\bin\Release\net5.0-windows\publish\Clock11.dll"; DestDir: "{app}"; Flags: ignoreversion
