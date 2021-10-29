@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using static Clock11.Data.Theme;
 
-namespace Clock11
+namespace Clock11.Dialogs
 {
     /// <summary>
     /// Interaction logic for SettingsDialog.xaml

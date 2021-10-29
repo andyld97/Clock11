@@ -1,4 +1,5 @@
 ﻿using Clock11.Data;
+using Clock11.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Windows;
