@@ -31,8 +31,8 @@ namespace Clock11
             clockTimer.Start();
 
             // Register hotkeys
-            GlobalHotKey.RegisterHotKey("Ctrl + U", () => ClockWindow.BringClockWindowsToFront(clockWindows));
-            GlobalHotKey.RegisterHotKey("Ctrl + H", () => clockWindows.ForEach(w => w.Hide()));
+            GlobalHotKey.RegisterHotKey(Consts.HotkeyBringToFront, () => ClockWindow.BringClockWindowsToFront(clockWindows));
+            GlobalHotKey.RegisterHotKey(Consts.HotkeyHide, () => clockWindows.ForEach(w => w.Hide()));
 
             // Create a context menu for the notifyicon
             var menu = new System.Windows.Forms.ContextMenuStrip();
