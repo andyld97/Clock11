@@ -206,4 +206,7 @@ Programmed by Andreas L.</value>
   <data name="strReleaseDate" xml:space="preserve">
     <value>10/29/2021 2:23 PM</value>
   </data>
+  <data name="strSettingsDialog_ShowSeconds" xml:space="preserve">
+    <value>Show seconds</value>
+  </data>
 </root>

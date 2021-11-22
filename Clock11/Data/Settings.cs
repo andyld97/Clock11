@@ -11,6 +11,8 @@ namespace Clock11.Data
 
         public string Theme { get; set; } = "Windows11";
 
+        public bool ShowSeconds { get; set; } = false;
+
         public Theme CustomTheme { get; set; } = new Theme()
         {
             FontFamily = "Segoe",

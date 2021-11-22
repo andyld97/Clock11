@@ -270,6 +270,15 @@ namespace Clock11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show seconds.
+        /// </summary>
+        public static string strSettingsDialog_ShowSeconds {
+            get {
+                return ResourceManager.GetString("strSettingsDialog_ShowSeconds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Text-Alignment:.
         /// </summary>
         public static string strSettingsDialog_TextAlignment {

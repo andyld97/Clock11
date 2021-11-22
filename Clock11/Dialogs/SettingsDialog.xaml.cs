@@ -47,6 +47,8 @@ namespace Clock11.Dialogs
             NumDateTimeMargin.Value = Settings.Instance.CustomTheme.DateMargin;
             CmbAlignment.SelectedIndex = (int)Settings.Instance.CustomTheme.HorizontalAlignment;
 
+            ChkShowSeconds.IsChecked = Settings.Instance.ShowSeconds;
+
             isInitalized = true;
         }
 
@@ -54,6 +56,8 @@ namespace Clock11.Dialogs
         {
             if (!isInitalized)
                 return;
+
+            Settings.Instance.ShowSeconds = ChkShowSeconds.IsChecked.Value;
 
             if (RadioPredefinedTheme.IsChecked.Value)
             {
@@ -126,6 +130,11 @@ namespace Clock11.Dialogs
         {
             Settings.Instance.Save();
             DialogResult = true;
+        }
+
+        private void ChkShowSeconds_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateTheme();
         }
     }
 }

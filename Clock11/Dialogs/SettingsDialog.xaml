@@ -63,6 +63,8 @@
             </StackPanel>
         </GroupBox>
 
+        <CheckBox x:Name="ChkShowSeconds" Margin="7" Content="{x:Static res:Resources.strSettingsDialog_ShowSeconds}" Checked="ChkShowSeconds_Checked" Unchecked="ChkShowSeconds_Checked" />
+
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
             <Button x:Name="ButtonApply" Click="ButtonApply_Click" Content="{x:Static res:Resources.strApply}" FontWeight="Bold" Padding="5" Width="100"/>
             <Button x:Name="ButtonCancel" Click="ButtonCancel_Click" Content="{x:Static res:Resources.strCancel}" Padding="5" Margin="10,0,0,0" Width="100" />

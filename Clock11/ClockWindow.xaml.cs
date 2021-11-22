@@ -38,7 +38,7 @@ namespace Clock11
 
         public void RefreshClock(DateTime now)
         {
-            TextClockTime.Text = now.ToString("t");
+            TextClockTime.Text = now.ToString(Settings.Instance.ShowSeconds ? "T" : "t");
             TextClockDate.Text = now.ToString("d");
         }
 

@@ -182,4 +182,7 @@ Programmiert von Andreas L.</value>
   <data name="strReleaseDate" xml:space="preserve">
     <value>29.10.2021 14:23 Uhr</value>
   </data>
+  <data name="strSettingsDialog_ShowSeconds" xml:space="preserve">
+    <value>Sekunden anzeigen</value>
+  </data>
 </root>
