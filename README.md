@@ -1,5 +1,7 @@
 # Clock11
 
+Update: "Thank you for your feedback! We made it possible to display the date and time on secondary monitors with Build 22509, now available in the Dev Channel: https://aka.ms/wip22509"
+
 ## What is Clock11?
 
 Clock11 is a very small app which brings back the clock on all other taskbars except the primary taskbar.
