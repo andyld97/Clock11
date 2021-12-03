@@ -32,13 +32,15 @@ WizardStyle=modern
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
-Source: "..\bin\Release\net5.0-windows\publish\de\Clock11.resources.dll"; DestDir: "{app}\de"; Flags: ignoreversion
-Source: "..\bin\Release\net5.0-windows\publish\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\bin\Release\net5.0-windows\publish\Clock11.deps.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\bin\Release\net5.0-windows\publish\Clock11.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\bin\Release\net5.0-windows\publish\Clock11.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\bin\Release\net5.0-windows\publish\Clock11.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\bin\Release\net5.0-windows\publish\Serialization.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\net6.0-windows\publish\de\Clock11.resources.dll"; DestDir: "{app}\de"; Flags: ignoreversion
+Source: "..\bin\Release\net6.0-windows\publish\runtimes\win\lib\net6.0\System.Management.dll"; DestDir: "{app}\runtimes\win\lib\net6.0\System.Management.dll"; Flags: ignoreversion
+Source: "..\bin\Release\net6.0-windows\publish\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\net6.0-windows\publish\Clock11.deps.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\net6.0-windows\publish\Clock11.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\net6.0-windows\publish\Clock11.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\net6.0-windows\publish\Clock11.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\net6.0-windows\publish\Serialization.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\net6.0-windows\publish\System.Management.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
