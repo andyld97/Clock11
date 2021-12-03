@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Clock11"
-#define MyAppVersion "1.2.0"
+#define MyAppVersion "1.3.0"
 #define MyAppPublisher "Code A Software"
 #define MyAppExeName "Clock11.exe"
 
@@ -33,7 +33,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
 Source: "..\bin\Release\net6.0-windows\publish\de\Clock11.resources.dll"; DestDir: "{app}\de"; Flags: ignoreversion
-Source: "..\bin\Release\net6.0-windows\publish\runtimes\win\lib\net6.0\System.Management.dll"; DestDir: "{app}\runtimes\win\lib\net6.0\System.Management.dll"; Flags: ignoreversion
+Source: "..\bin\Release\net6.0-windows\publish\runtimes\win\lib\net6.0\System.Management.dll"; DestDir: "{app}\runtimes\win\lib\net6.0\"; Flags: ignoreversion
 Source: "..\bin\Release\net6.0-windows\publish\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\bin\Release\net6.0-windows\publish\Clock11.deps.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\bin\Release\net6.0-windows\publish\Clock11.dll"; DestDir: "{app}"; Flags: ignoreversion
