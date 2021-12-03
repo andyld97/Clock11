@@ -1,7 +1,10 @@
 ﻿using Clock11.Data;
 using Clock11.Dialogs;
+using Clock11.Helper;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Management;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -16,6 +19,7 @@ namespace Clock11
         private readonly List<ClockWindow> clockWindows = new List<ClockWindow>();
         private SettingsDialog settingsDialog = null;
         private AboutDialog aboutDialog = null;
+        private ManagementEventWatcher watcher;
 
         private const int LEFT_MARGIN = 60;
         private const int TOP_MARGIN = 10;
@@ -58,6 +62,17 @@ namespace Clock11
                 Text = Clock11.Resources.strAppTitle,
                 ContextMenuStrip = menu,
             };
+
+            watcher = ThemeHelper.RegisterThemeWatcher();
+            watcher.EventArrived += Watcher_EventArrived;
+        }
+
+        private void Watcher_EventArrived(object sender, System.Management.EventArrivedEventArgs e)
+        {
+            var currentTheme = ThemeHelper.GetWindowsTheme();
+            Dispatcher.Invoke(() => {
+                RefreshTheme(currentTheme);
+            });
         }
 
         #region Tray Icon Buttons
@@ -101,6 +116,7 @@ namespace Clock11
 
         private void InitalizeClockWindows()
         {
+            var currentTheme = ThemeHelper.GetWindowsTheme();
             clockWindows.Clear();
 
             foreach (var screen in WpfScreen.AllScreens())
@@ -109,7 +125,7 @@ namespace Clock11
                     continue;
 
                 var area = screen.WorkingArea;
-                ClockWindow clockWindow = new ClockWindow
+                ClockWindow clockWindow = new ClockWindow(currentTheme)
                 {
                     Left = area.Left + area.Width - LEFT_MARGIN,
                     Top = area.Top + area.Height + TOP_MARGIN,
@@ -120,10 +136,10 @@ namespace Clock11
             }
         }
 
-        public void RefreshTheme()
+        public void RefreshTheme(ThemeHelper.WindowsTheme? windowsTheme = null)
         {
             var theme = Theme.GetCurrentTheme();
-            clockWindows.ForEach(w => w.ApplyTheme(theme));
+            clockWindows.ForEach(w => w.ApplyTheme(theme, windowsTheme));
             ClockWindow.BringClockWindowsToFront(clockWindows);
         }
 
@@ -131,6 +147,13 @@ namespace Clock11
         {
             DateTime now = DateTime.Now;
             clockWindows.ForEach(w => w.RefreshClock(now));
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            watcher.Stop();
+            watcher.EventArrived -= Watcher_EventArrived;
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Clock11.Data
             FontSize = 11,
             ForegroundColor = Colors.White,
             HorizontalAlignment = Theme.HAlignment.Right,
+            IsDefaultTheme = true,
         };
 
         public static Theme Windows10Theme { get; set; } = new Theme()
@@ -22,6 +23,7 @@ namespace Clock11.Data
             RightMargin = 8,
             TopMargin = 5,
             HorizontalAlignment = Theme.HAlignment.Center,
+            IsDefaultTheme = true
         };
     }
 }

@@ -25,6 +25,8 @@ namespace Clock11.Data
 
         public int DateMargin { get; set; }
 
+        public bool IsDefaultTheme { get; set; } = false;
+
         public HAlignment HorizontalAlignment { get; set; } 
 
         public enum HAlignment
@@ -58,6 +60,7 @@ namespace Clock11.Data
                 HorizontalAlignment = HorizontalAlignment,
                 RightMargin = RightMargin,
                 TopMargin = TopMargin,
+                IsDefaultTheme = IsDefaultTheme,
             };
         }
     }

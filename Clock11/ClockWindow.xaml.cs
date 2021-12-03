@@ -1,4 +1,5 @@
 ﻿using Clock11.Data;
+using Clock11.Helper;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -14,6 +15,10 @@ namespace Clock11
     {
         private double defaultLeft;
         private double defaultTop;
+        private readonly ThemeHelper.WindowsTheme windowsTheme;
+
+        private static readonly SolidColorBrush WHITE_BRUSH = new SolidColorBrush(Colors.White);
+        private static readonly SolidColorBrush BLACK_BRUSH = new SolidColorBrush(Colors.Black);
 
         [DllImport("user32.dll")]
         private static extern IntPtr GetForegroundWindow();
@@ -21,9 +26,10 @@ namespace Clock11
         [DllImportAttribute("user32.dll")]
         private static extern int SetForegroundWindow(int hWnd);
 
-        public ClockWindow()
+        public ClockWindow(ThemeHelper.WindowsTheme windowsTheme)
         {
             InitializeComponent();
+            this.windowsTheme = windowsTheme;
             RefreshClock(DateTime.Now);
             Loaded += ClockWindow_Loaded;    
         }
@@ -33,7 +39,7 @@ namespace Clock11
             defaultLeft = Left;
             defaultTop = Top;
 
-            ApplyTheme(Theme.GetCurrentTheme());
+            ApplyTheme(Theme.GetCurrentTheme(), windowsTheme);
         }
 
         public void RefreshClock(DateTime now)
@@ -52,7 +58,7 @@ namespace Clock11
             Activate();        
         }
 
-        public void ApplyTheme(Theme theme)
+        public void ApplyTheme(Theme theme, ThemeHelper.WindowsTheme? windowsTheme = null)
         {
             if (theme == null)
                 return;
@@ -90,6 +96,10 @@ namespace Clock11
             }
 
             TextClockDate.Margin = new Thickness(0, theme.DateMargin, 0, 0);
+
+            // Apply correct foreground for default themes according to the currently set windows theme!
+            if (theme.IsDefaultTheme && windowsTheme != null)
+                TextClockDate.Foreground = TextClockTime.Foreground = (windowsTheme == ThemeHelper.WindowsTheme.Light ? BLACK_BRUSH : WHITE_BRUSH);
         }
 
         public static void BringClockWindowsToFront(List<ClockWindow> windows)
