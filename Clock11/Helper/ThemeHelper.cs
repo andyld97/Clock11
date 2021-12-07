@@ -13,7 +13,8 @@ namespace Clock11.Helper
     {
 		private const string RegistryKeyPath = @"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize";
 
-		private const string RegistryValueName = "AppsUseLightTheme";
+		// private const string RegistryValueName = "AppsUseLightTheme"; // App-Theme
+		private const string RegistryValueName = "SystemUsesLightTheme"; // System-Theme (Taskbar)
 
 		public enum WindowsTheme
 		{
