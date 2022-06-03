@@ -162,7 +162,7 @@ namespace Clock11 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 07/12/2021 3:18 PM.
+        ///   Looks up a localized string similar to 07/12/2021 5:19 PM.
         /// </summary>
         public static string strReleaseDate {
             get {

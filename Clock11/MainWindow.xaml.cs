@@ -82,7 +82,7 @@ namespace Clock11
             if (aboutDialog == null)
             {
                 aboutDialog = new AboutDialog(this);
-                aboutDialog.OnClosingSettingsDialog += delegate (object? sender, EventArgs e) { settingsDialog = null; };
+                aboutDialog.OnClosingSettingsDialog += delegate (object? sender, EventArgs e) { aboutDialog = null; };
                 aboutDialog.ShowDialog();
             }
             else
