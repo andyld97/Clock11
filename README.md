@@ -1,6 +1,10 @@
 # Clock11
 
-Update (12/01/2021): "Thank you for your feedback! We made it possible to display the date and time on secondary monitors with Build 22509, now available in the Dev Channel: https://aka.ms/wip22509"
+**Last Update (06/03/2022)**:   
+Clock11 is now obsolete due to the reason that Windows 11 has already longer a clock on all taskbars!
+
+**Last Udate (12/01/2021)**:   
+"Thank you for your feedback! We made it possible to display the date and time on secondary monitors with Build 22509, now available in the Dev Channel: https://aka.ms/wip22509"
 
 ## What is Clock11?
 
